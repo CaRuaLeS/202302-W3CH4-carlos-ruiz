@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom';
-import { Header } from './header';
+import { SeriesPending } from './series-pending';
 
 describe('Given Header component', () => {
   test('It should be instace', () => {
     document.body.innerHTML = '<slot></slot>';
-    const element = new Header('slot');
-    expect(element).toBeInstanceOf(Header);
+    const element = new SeriesPending('slot');
+    expect(element).toBeInstanceOf(SeriesPending);
   });
 });

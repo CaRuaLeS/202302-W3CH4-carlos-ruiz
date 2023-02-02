@@ -2,8 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 import { Component } from '../component/component';
-
-export class Header extends Component {
+export class Series extends Component {
   constructor(public selector: string) {
     super();
     this.template = this.createTemplate();
@@ -12,9 +11,12 @@ export class Header extends Component {
 
   private createTemplate() {
     return `
-      <header class="main-header">
-        <h1 class="main-title">My Series</h1>
-      </header>
+      <section class="series">
+        <h2 class="section-title">Series list</h2>
+      <section class="series-pending">
+      </section>
+      <section class="series-watched">
+      </section>
     `;
   }
 

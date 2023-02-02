@@ -1,4 +1,6 @@
-const series = [
+import { SerieStructure } from '../models/serie';
+
+export const SERIES: SerieStructure[] = [
   {
     id: 1,
     name: 'The Sopranos',

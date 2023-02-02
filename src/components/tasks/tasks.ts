@@ -5,7 +5,6 @@ import { TaskStorageRepo } from '../../services/repository/task.storage.repo';
 import { Add } from '../add/add';
 import { Card } from '../card/card';
 import { Component } from '../component/component';
-import './tasks.scss';
 
 export class Tasks extends Component {
   public tasks: TaskStructure[];
@@ -14,12 +13,6 @@ export class Tasks extends Component {
     this.tasks = this.repo.getTasks();
     this.template = this.createTemplate();
     this.render('afterbegin');
-  }
-
-  addTask(task: TaskStructure) {
-    this.tasks = [...this.tasks, task];
-    this.render('afterbegin');
-    this.repo.setTasks(this.tasks);
   }
 
   deleteTask(id: TaskStructure['id']) {
@@ -37,7 +30,6 @@ export class Tasks extends Component {
   render(place: globalThis.InsertPosition) {
     (document.querySelector('main') as HTMLElement).innerHTML = '';
     super.render(place);
-    new Add('.tasks', this.addTask.bind(this));
     this.tasks.forEach((item) => {
       new Card(
         '.tasks>ul',
