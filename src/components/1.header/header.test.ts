@@ -3,14 +3,20 @@ import '@testing-library/jest-dom';
 import { Header } from './header';
 
 describe('Given Header component', () => {
-  test('should first', () => {
+  test('It should be instace', () => {
     document.body.innerHTML = '<slot></slot>';
     const mockTitle = 'Test';
     const element = new Header('slot', mockTitle);
     expect(element).toBeInstanceOf(Header);
     const h1 = screen.getByRole('heading', { name: mockTitle });
     expect(h1).toBeInTheDocument();
-    const p = screen.getByRole('note');
-    expect(p).toBeInTheDocument();
+  });
+  test('Then the h1 should be in the document', () => {
+    document.body.innerHTML = '<slot></slot>';
+    const mockTitle = 'Test';
+    const element = new Header('slot', mockTitle);
+    expect(element).toBeInstanceOf(Header);
+    const h1 = screen.getByRole('heading', { name: mockTitle });
+    expect(h1).toBeInTheDocument();
   });
 });

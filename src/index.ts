@@ -1,6 +1,6 @@
 /* eslint-disable no-new */
 import { Footer } from './components/footer/footer';
-import { Header } from './components/header/header';
+import { Header } from './components/1.header/header';
 import { Menu } from './components/menu/menu';
 import { Tasks } from './components/tasks/tasks';
 import './index.scss';
